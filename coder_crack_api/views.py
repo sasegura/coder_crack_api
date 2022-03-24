@@ -9,6 +9,10 @@ class UserMsgViewSet(viewsets.ModelViewSet):
     queryset = UserMessage.objects.all()
     serializer_class = UserMsgSerializer
 
+    def perform_create(self, serializer):
+        data = serializer.validated_data
+        serializer.save()
+
 
 class EmailSubsViewSet(viewsets.ModelViewSet):
     queryset = EmailSubscription.objects.all()

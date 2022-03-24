@@ -6,6 +6,9 @@ class EmailSubscription(models.Model):
     email = models.EmailField(unique=True)
     active = models.BooleanField(default=True)
 
+    class Meta:
+        ordering = ['email']
+
 
 class UserMessage(models.Model):
     name = models.CharField(max_length=256)
@@ -13,3 +16,6 @@ class UserMessage(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=128)
     message = models.TextField()
+
+    class Meta:
+        ordering = ['name', 'lastname']
