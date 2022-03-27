@@ -127,7 +127,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = BASE_DIR / 'static'
+STATICFILES_DIRS = [BASE_DIR / 'static',]
 # // os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
@@ -140,3 +140,11 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20
 }
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'in-v3.mailjet.com'
+EMAIL_PORT = 25
+
+EMAIL_PORT
+
